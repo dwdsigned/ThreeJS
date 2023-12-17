@@ -11,6 +11,15 @@ const cubeMaterial = new THREE.MeshBasicMaterial({ color: "red" });
 const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
 scene.add(cubeMesh);
 
+console.log(cubeMesh);
+
+cubeMesh.position.y = 1
+cubeMesh.position.x = 1
+
+const axesHelper = new THREE.AxesHelper(2);
+scene.add(axesHelper);
+
+
 // initialize the camera
 const camera = new THREE.PerspectiveCamera(
   35,
@@ -19,6 +28,8 @@ const camera = new THREE.PerspectiveCamera(
   200
 );
 camera.position.z = 5;
+
+console.log(cubeMesh.position.distanceTo(camera.position));
 
 // initialize the renderer
 const canvas = document.querySelector("canvas.threejs");
