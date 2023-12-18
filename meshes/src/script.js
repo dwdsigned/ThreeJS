@@ -12,9 +12,16 @@ const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
 scene.add(cubeMesh);
 
 console.log(cubeMesh);
+const tempVector = new THREE.Vector3(0,1,0);
+cubeMesh.position.copy(tempVector);
 
-cubeMesh.position.y = 1
-cubeMesh.position.x = 1
+
+// cubeMesh.position.y = 1
+// cubeMesh.position.x = -1
+
+
+cubeMesh.scale.y = 2
+cubeMesh.scale.set(2,2,1)
 
 const axesHelper = new THREE.AxesHelper(2);
 scene.add(axesHelper);
