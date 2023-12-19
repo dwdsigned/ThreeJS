@@ -9,10 +9,20 @@ const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
 const cubeMaterial = new THREE.MeshBasicMaterial({ color: "red" });
 
 const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
+const cubeMesh2 = new THREE.Mesh(cubeGeometry, cubeMaterial);
+const cubeMesh3 = new THREE.Mesh(cubeGeometry, cubeMaterial);
+// cubeMesh2.position
+
+const group = new THREE.Group();
+group.add(cubeMesh);
+group.add(cubeMesh2);
+group.add(cubeMesh3);
+
+scene.add(group);
 scene.add(cubeMesh);
 
 console.log(cubeMesh);
-const tempVector = new THREE.Vector3(0,1,0);
+const tempVector = new THREE.Vector3(0,0,0);
 cubeMesh.position.copy(tempVector);
 
 
